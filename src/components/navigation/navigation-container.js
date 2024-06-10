@@ -1,21 +1,24 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 
 export default class NavigationComponent extends Component {
-    constructor() {
-        super();
+  constructor() {
+    super();
+  }
 
-    }
+  render() {
+    return (
+      <div>
+        <NavLink exact to="/">
+          Home
+        </NavLink>
 
+        <NavLink to="/about-me">About</NavLink>
 
-    render() {
-        return(
-            <div>
-               <button>Home</button> 
-               <button>About</button>
-               <button>Contact</button>
-               <button>Blog</button>
-               {true ? <button>Add Blog</button> : null}
-            </div>
-        )
-    }
+        <button>Contact</button>
+        <button>Blog</button>
+        {false ? <button>Add Blog</button> : null}
+      </div>
+    );
+  }
 }
